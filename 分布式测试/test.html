@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ajax text</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<style>
+		input{
+			width: 50vw;
+			font-size: 20px;
+		}
+		#result{
+			background-color: #51a42e;
+			padding: 10px;
+		}
+		button{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>最好打开控制台测试</h1>
+	<div></div>
+	<h3 id="result"></h3>
+	<input id="input" value="http://localhost:8080/hello.html" placeholder="请求的URL"></input><br>
+	<button id="btn">获取数据</button>
+</body>
+<script type="text/javascript">
+	var data = 
+	{
+   
+   }
+
+					
+	$("#btn").click(function(){
+		console.log("click")
+		$("#result").text("")
+		$.ajax({
+			url: $("#input").val(),
+			contentType: "application/json;charset=utf-8",
+			//data: JSON.stringify(data),
+			method: "GET",
+			success: res=>{
+				console.log(res)
+				$("#result").text(res)
+			}
+		})
+	})
+</script>
+</script>
+</html>
